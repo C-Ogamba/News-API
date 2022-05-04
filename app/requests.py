@@ -62,8 +62,9 @@ def get_news_sources():
     Function that gets the json response to our url request
     '''
     get_news_url = base_url.format(api_key)
+    get_sources_url = ""
 
-    with urllib.request.urlopen(get_news_url) as url:
+    with urllib.request.urlopen(get_sources_url) as url:
         get_news_data = url.read()
         get_news_response = json.loads(get_news_data)
 
@@ -95,4 +96,4 @@ def process_results_sources(source_list):
             id, name, description, url, category, language)
         source_results.append(source_object)
 
-    return 
+    return source_results
