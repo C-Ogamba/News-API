@@ -37,20 +37,22 @@ def process_results(news_list):
         news_list: A list of dictionaries that contain news details
 
     Returns :
-        news_results: A list of movie objects
+        news_results: A list of news objects
     '''
     news_results = []
     for news_item in news_list:
+        author = news_item.get('author')
         title = news_item.get('title')
         description = news_item.get('description')
         urlToImage = news_item.get('urlToImage')
         content = news_item.get('content')
         publishedAt = news_item.get('publishedAt')
+        url = news_item.get('url')
 
         
 
         if urlToImage:
-            news_object = Articles(title, description,content, publishedAt,urlToImage,content)
+            news_object = Articles(author, title, description,content,url, publishedAt,urlToImage)
             news_results.append(news_object)
 
     return news_results

@@ -1,8 +1,25 @@
 {%macro show_article(Article)%}
 
 {%for article_item in Article%}
-<div>
-    <li>{{article_item.author}}</li>
-</div>
+<div class="container-fluid">
+        <div class="card">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card-title">
+                        <a href="{{url}}"><img src="{{article_item.urlToImage}}"></a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h3>{{article_item.title}} by {{article_item.author}}</h3>
+                        <p>{{article_item.description}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{{article_item.publishedAt}}" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endfor %}
 {% endmacro %}
