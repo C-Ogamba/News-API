@@ -1,12 +1,11 @@
-{%macro show_article(Article)%}
-
-{%for article_item in Article%}
 <div class="container-fluid">
-        <div class="card">
+{%macro show_article(Article)%}
+{%for article_item in Article%}
+        <!-- <div class="card" >
             <div class="row">
                 <div class="col-md-6">
                     <div class="card-title">
-                        <a href="{{url}}"><img src="{{article_item.urlToImage}}"></a>
+                        <img src="{{article_item.publishedAt}}" style="width: 18rem;">
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -15,11 +14,45 @@
                         <p>{{article_item.description}}</p>
                     </div>
                     <div class="card-footer">
-                        <a href="{{article_item.publishedAt}}" class="btn btn-primary">Read More</a>
+                        <a href="{{article_item.urlToImage}}" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
+ <!-- <div class="row">
+  <div class="col-sm">
+    <div class="card">
+        <img class="card-img-top" src="{{article_item.publishedAt}}" style="width: 18rem;">
+      <div class="card-body">
+        <h3>{{article_item.title}} by {{article_item.author}}</h3>
+        <p>{{article_item.description}}</p>
+        <a href="{{article_item.urlToImage}}" class="btn btn-primary">Read More</a>
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="card" style="width: 28rem;">
+  <img class="card-img-top" src="{{article_item.publishedAt}}" style="width: 18rem;">
+  <div class="card-body">
+    <h3>{{article_item.title}} by {{article_item.author}}</h3>
+    <p>{{article_item.description}}</p>
+    <a href="{{article_item.urlToImage}}" class="btn btn-primary">Read More</a>
+  </div>
+</div>
+
+{% endfor %}
+{% endmacro %}
+
+{%macro show_source(Source)%}
+{%for source_item in Source%}
+    <div class="card">
+        <h5 class="card-header">{{source_item.name}}</h5>
+    <div class="card-body">
+        <h5 class="card-title">{{source_item.category}}</h5>
+        <p class="card-text">{{source_item.description}}</p>
+        <a href="{{source_item.url}}" class="btn btn-primary">Read More</a>
+    </div>
     </div>
 {% endfor %}
 {% endmacro %}
+</div>

@@ -85,7 +85,6 @@ def process_results_sources(source_list):
     '''
     source_results = []
     for source_item in source_list:
-        id = source_item.get('id')
         name = source_item.get('name')
         description = source_item.get('description')
         url = source_item.get('url')
