@@ -1,11 +1,11 @@
 {% extends "base.html" %}
-{% from "macros.html" import  %}
+{% from "macros.html" import macro %}
 {% block content %}
     <h1 class="text-center">Latest News Updates</h1>
     <ul>
         {% for article in articles %}
         <div>
-            <div>{{articles.description}}</div>
+            <div>{{macro.show_article(Article)}}</div>
 
         </div>
         {% endfor %}
