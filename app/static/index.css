@@ -1,5 +1,13 @@
-img{
-    width: 5px;
-    height: 10px;
 
+.title{
+    font-size: 10rem;
+}
+.navbar {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar-brand {
+  text-align: center;
 }
