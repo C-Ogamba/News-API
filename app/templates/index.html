@@ -2,14 +2,23 @@
 {% import "macros.html" as macro %}
 
 {% block content %}
-    <h1 class="text-center ">Latest News Updates</h1>   
-    <main>
-        <div>{{macro.show_article(Article)}}</div>
-    </main>  
-    <section>
-        <div>{{macro.show_source(Source)}}</div>
-    </section>
-     
+<div class="container-fluid">
+    <h1 class="text-center ">Latest News Updates</h1> 
+    <div class="row">
+        <div class="col-12 col-md-8">
+            <h2 class="text-center">News Today</h2>
+            <hr>
+            <div>{{macro.show_article(Article)}}</div>
+        </div>  
+        <div class="col-6 col-md-4">
+            <h2 class="text-center">News Updates</h2>
+            <hr>
+            <div>{{macro.show_source(Source)}}</div>
+        </div>
+
+    </div>   
     
+
+</div>
     
 {% endblock %}
